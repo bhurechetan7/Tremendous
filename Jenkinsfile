@@ -1,10 +1,10 @@
 pipeline {
       agent any
       stages{
-       stage ('compile stage'){
+       stage ('Build'){
            steps{
            withMaven(maven : 'Maven'){
-               sh 'mvn clean compile'
+               sh 'clean package sonar:sonar'
            }
           }
       }
